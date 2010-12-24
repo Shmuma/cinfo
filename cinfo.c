@@ -130,6 +130,13 @@ void dofile(char *fname)
 
 	fsize=filesize(fd);
 
+	if(!fsize)
+	{
+		printf("empty\n");
+		close(fd);
+		return;
+        }
+
 	p=(unsigned long)mmap(0, fsize, PROT_READ, MAP_SHARED, fd,0);
 	
 	if(p==-1) {
@@ -147,7 +154,7 @@ void dofile(char *fname)
 		die("unable to allocate memory: %s",strerror(errno));
 
 	
-	if(mincore((void *)((p+~page_mask)&page_mask),num_pages*page_size, map)) 
+	if(mincore((void *)((p+~page_mask)&page_mask),(size_t)num_pages*(size_t)page_size, map))
 		die("kernel returned: %s\n",strerror(errno));
 		
 
