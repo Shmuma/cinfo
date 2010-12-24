@@ -1,0 +1,14 @@
+The goal of this project is to provide users with more information on the
+contents of the various caches of their kernel. Having more information may
+be useful to:
+
+    * determine if adding more memory is useful
+    * see if the cache is functioning as it should
+    * find out if your files on the server are being cached or if other
+files are deemed more important
+
+It is suspected that better awareness of caches will improve people's
+ability to build and maintain high performance servers and kernels.
+
+
+Supported platforms: Linux, FreeBSD, Mac OS X, OpenBSD, Solaris

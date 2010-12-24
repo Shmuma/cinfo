@@ -1,0 +1,1 @@
+#undef NEED_GETOPT

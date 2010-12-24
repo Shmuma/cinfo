@@ -1,0 +1,4 @@
+- does not support 64 bit files (LFS)
+- not sure if mmap()ing large files is a smart thing to do
+	may need to chunk this
+- assumes width of your terminal is 80 (need termcap for this)

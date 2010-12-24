@@ -1,0 +1,48 @@
+Run ./configure, make and then as root, make install.
+
+Linux
+-----
+
+You need 2.3.x for unknown x, or 2.4
+
+FIXME: figure out x
+
+mincore(), which we use to query the kernel, is officially only supported by
+glibc 2.2, but we provide a syscall wrapper that makes it work with any
+libc.
+
+FreeBSD
+-------
+
+For compiling, you need GNU getopt. Under Linux this is integrated in libc
+and therefore always available. For FreeBSD, install the 'libgnugetopt'
+port.
+
+Support confirmed for 4.3.
+
+FIXME: which other versions work?
+
+Mac OS X
+--------
+
+Uses both fallback getopt.c as well as getopt.h, and then works.
+
+NetBSD
+------
+
+1.4.2 compiles and links, but the kernel doesn't support it. 1.5.1 might.
+
+OpenBSD
+-------
+
+You need libiberty for this to work. 2.9 is confirmed, 2.6 doesn't work.
+Uses a fallback getopt.h.
+
+FIXME: which other versions work
+
+Solaris
+-------
+
+2.8 works, uses fallback getopt.h and libiberty. 
+
+FIXME: which other versions work
